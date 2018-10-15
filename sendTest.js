@@ -49,7 +49,7 @@ const config = {
 }
 
 const eos = Eos(config)
-const eosReadOnly = EosAPI(config)
+// const eosReadOnly = EosAPI(config)
 
 const options = {
   authorization: 'wenqingyu222@active',

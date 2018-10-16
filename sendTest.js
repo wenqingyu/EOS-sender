@@ -1,41 +1,5 @@
-// const eosjs = require('eosjs')
-// const fetch = require('node-fetch')                            // node only; not needed in browsers
-// const { TextDecoder, TextEncoder } = require('text-encoding')  // node, IE11 and IE Edge Browsers
-
-// const defaultPrivateKey = '5JtUScZK2XEp3g9gh7F8bwtPTRAkASmNrrftmx4AxDKD5K4zDnr' // useraaaaaaaa
-// const signatureProvider = new eosjs.SignatureProvider([defaultPrivateKey])
-
-// const rpc = new eosjs.Rpc.JsonRpc('https://api1.eosasia.one', { fetch })
-
-// const api = new eosjs.Api({ rpc, signatureProvider, textDecoder: new TextDecoder(), textEncoder: new TextEncoder() })
-
-// var sender = async () => {
-//   const result = await api.transact({
-//     actions: [{
-//       account: 'eosio.token',
-//       name: 'transfer',
-//       authorization: [{
-//         actor: 'useraaaaaaaa',
-//         permission: 'active'
-//       }],
-//       data: {
-//         from: 'useraaaaaaaa',
-//         to: 'useraaaaaaab',
-//         quantity: '0.0001 SYS',
-//         memo: ''
-//       }
-//     }]
-//   }, {
-//     blocksBehind: 3,
-//     expireSeconds: 30
-//   })
-//   console.dir(result)
-// }
-
-// sender()
-
 const Eos = require('eosjs')
-const EosAPI = require('eosjs-api')
+// const EosAPI = require('eosjs-api')
 
 // Default configuration
 const config = {

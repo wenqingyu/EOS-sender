@@ -1,3 +1,14 @@
+/**
+ * eosBet_v1:
+ * This one is simply implementation of Binary strategy
+ * winning -> oringinal bet
+ * lost -> doubling bet
+ *
+ * if reach cap -> speculatively to JamieScore Pivoting to get lost back
+ *
+ * Ground on our assumption, when JamieScore be a relatively big negative, it is time to play big bet (manually), hopefully!
+ */
+
 const Eos = require('eosjs')
 require('dotenv').config()
 const axios = require('axios')
@@ -42,7 +53,7 @@ const options = {
 let betDiceContract = 'eosbetdice11'
 let account = 'wenqingyu222'
 let initAmt = 0.5
-let currentAmt = 0.5
+let currentAmt = initAmt
 let cap = 3.9
 
 // pivot speculation

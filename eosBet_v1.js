@@ -1,3 +1,14 @@
+/**
+ * eosBet_v1:
+ * This one is simply implementation of JamieScore Pivoting
+ * JamieScore start with 0
+ * win -> JamieScore ++
+ * lost -> JamieScore --
+ * If JamieScore become positive -> lost recovered
+ * If JamieScore become -N means lost of N time
+ * Ground on our assumption, when JamieScore be a relatively big negative, it is time to play big bet (manually), hopefully!
+ */
+
 const Eos = require('eosjs')
 require('dotenv').config()
 const axios = require('axios')
@@ -41,9 +52,9 @@ const options = {
 
 let betDiceContract = 'eosbetdice11'
 let account = 'wenqingyu222'
-let initAmt = 0.1
-let currentAmt = 0.1
-let cap = 0.9
+let initAmt = 0.1 // Params A: start with this amount to run JamieScore pivoting
+let currentAmt = initAmt
+let cap = 0.9 // Params B: Not using
 
 // pivot speculation
 let pivotScore = 0

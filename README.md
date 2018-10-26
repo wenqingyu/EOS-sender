@@ -26,7 +26,7 @@ The transfer will be proceeded.
 
 
 ### EOSBet Bot | Binanry strategy (JamieScore Pivoting stop lost optimization)
-eosBet.js
+`node eosBet.js`
 
 This one is simply implementation of Binary strategy
 
@@ -43,7 +43,7 @@ Ground on our assumption, when JamieScore be a relatively big negative, it is ti
 
 
  ### eosBet_v1 Bot | Pure JamieScore Pivoting
- eosbet_v1.js
+ `node eosbet_v1.js`
 
  This one is simply implementation of JamieScore Pivoting
  

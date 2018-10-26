@@ -1,5 +1,6 @@
 /**
- * Get EOS Account Info
+ * Get Bancor3D historical transactions
+ * not finished yet
  */
 
 const Eos = require('eosjs')
@@ -20,24 +21,16 @@ const config = {
 const eos = Eos(config)
 const eosReadOnly = EosAPI(config)
 
-// const options = {
-//   authorization: 'fromUserID@active',
-//   broadcast: true,
-//   sign: true
-// }
-
-// eos.transfer('fromUserID', 'toUserID', '0.2500 EOS', 'this is MEMO', options)
-
 async function main () {
-  let history = await eos.getActions('wenqingyu222', -1, -4) // MAX Offset 100
-  let actions = history.actions
-  console.log(history)
+  let history = await eos.getActions('bancor3dcode', -1, -4) // MAX Offset 100
+  let txs = history.actions
+  // console.log(txs)
 
-  // for (let i = 0; i < actions.length; i++) {
-  //   let a = actions[i]
-  //   let data = a.action_trace.act.data
-  //   console.log(data)
-  // }
+  for (let i = 0; i < txs.length; i++) {
+    let tx = txs[i]
+    let data = tx.action_trace
+    console.log(data.act.data)
+  }
 }
 
 main().catch(error => {
